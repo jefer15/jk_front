@@ -4,19 +4,18 @@
     <form [formGroup]="loginForm">
       <div class="mb-4">
         <mat-form-field class="w-full">
-          <mat-label>Identificación</mat-label>
+          <mat-label>Correo</mat-label>
           <input
             matInput
-            type="text"
-            formControlName="identification"
+            type="email"
+            formControlName="email"
             class="mt-1 block w-full"
-            maxlength="12"
           />
-          <mat-error *ngIf="loginForm.get('identification')?.hasError('required') && loginForm.get('identification')?.touched">
-            La identificación es requerida.
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+            El correo es requerido.
           </mat-error>
-          <mat-error *ngIf="loginForm.get('identification')?.hasError('minlength') && loginForm.get('identification')?.touched">
-            La identificación tiene un número minimo de 7 digitos.
+          <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            El correo no es válido.
           </mat-error>
         </mat-form-field>
       </div>

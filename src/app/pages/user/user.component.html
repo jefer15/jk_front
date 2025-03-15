@@ -4,30 +4,31 @@
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header
-          class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider"> ID </th>
-        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-white"> {{row.id}} </td>
+          class="px-6 py-3 text-left text-xs font-bold text-gray uppercase tracking-wider bg-blue-600"> ID </th>
+        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 bg-blue-50"> {{row.id}} </td>
       </ng-container>
 
       <ng-container matColumnDef="identification">
         <th mat-header-cell *matHeaderCellDef mat-sort-header
-          class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider"> Identificación </th>
-        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-white"> {{row.identification}} </td>
+          class="px-6 py-3 text-left text-xs font-bold text-gray uppercase tracking-wider bg-blue-600"> Identificación </th>
+        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 bg-blue-50"> {{row.identification}} </td>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header
-          class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider"> Nombre </th>
-        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-white"> {{row.name}}</td>
+          class="px-6 py-3 text-left text-xs font-bold text-gray uppercase tracking-wider bg-blue-600"> Nombre </th>
+        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 bg-blue-50"> {{row.name}}</td>
       </ng-container>
 
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header
-          class="px-6 py-3 text-left text-xs font-bold text-white uppercase tracking-wider"> Correo </th>
-          <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-white"> {{row.email}}</td>
+          class="px-6 py-3 text-left text-xs font-bold text-gray uppercase tracking-wider bg-blue-600"> Correo </th>
+        <td mat-cell *matCellDef="let row" class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 bg-blue-50"> {{row.email}}</td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-gray-50"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="bg-white border-b hover:bg-gray-50"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-blue-600"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          class="bg-blue-50 border-b hover:bg-blue-100 transition-colors duration-200"></tr>
     </table>
   </div>
 

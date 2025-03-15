@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      identification: ['', [Validators.required, Validators.minLength(7)]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     })
   }
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     const hashedPassword = sha256.update(this.loginForm.get('password')?.value).hex();
 
     const data = {
-      identification:this.loginForm.get('identification')?.value,
+      email:this.loginForm.get('email')?.value,
       password:hashedPassword
     }
 
