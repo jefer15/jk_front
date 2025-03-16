@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   typePassword = "password";
+  isLoading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.isLoading = true;
     const hashedPassword = sha256.update(this.loginForm.get('password')?.value).hex();
 
     const data = {
@@ -48,6 +50,7 @@ export class LoginComponent implements OnInit {
 
     this._loginService.login(data).subscribe({
       next: (res:any)=>{
+        this.isLoading = false;
         if(res.code == 3) {
           Swal.fire({
             title: "Error en la autenticación",
@@ -71,6 +74,7 @@ export class LoginComponent implements OnInit {
         }
       },
       error:()=>{
+        this.isLoading = false;
       }
     })
   }

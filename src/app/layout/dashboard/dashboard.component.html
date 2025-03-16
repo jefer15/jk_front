@@ -1,7 +1,7 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="h-full bg-gray-300">
   <mat-sidenav-content>
     <mat-toolbar>
-      <span class="example-spacer"></span>
+      <span class="spacer"></span>
       <button mat-icon-button [matMenuTriggerFor]="accountMenu">
         <mat-icon>account_circle</mat-icon>
       </button>
@@ -9,7 +9,7 @@
         <button (click)="logout()" mat-menu-item>Cerrar sesión</button>
       </mat-menu>
     </mat-toolbar>
-    <div class="content">
+    <div class="w-full">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
